@@ -1,7 +1,7 @@
-/* src/Header.css */
+
 .header {
     display: flex;
-    justify-content: flex-start; /* Align items to the start (left) */
+    justify-content: center;
     align-items: center;
     width: 100%;
     padding: 15px 0;
@@ -10,9 +10,23 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 100;
+    color: black;
+    transition: top 0.3s;
+    z-index: 1000;
 }
 
+.header.hidden {
+    top: -100px;
+}
+
+.home-button {
+    margin: 0 auto;
+
+}
+.home-icon {
+    width: 24px;
+    height: 24px;
+}
 .nav-button {
     padding: 12px 24px;
     font-size: 1rem;
@@ -20,7 +34,7 @@
     color: white;
     background: linear-gradient(135deg, #6a11cb, #2575fc);
     border: none;
-    border-radius: 50px; /* Rounded shape */
+    border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
@@ -31,6 +45,56 @@
     background: linear-gradient(135deg, #2575fc, #6a11cb);
 }
 
-.home-button {
-    margin-left: 15px; /* Add some margin to the left */
+/* Side menu styles */
+.side-menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background: rgba(30, 30, 30, 0.9);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+}
+
+.side-menu.open {
+    transform: translateX(0);
+}
+
+.menu-item {
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.menu-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Toggle button styles */
+.menu-toggle {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background: rgba(30, 30, 30, 0.9);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .side-menu {
+        display: none;
+    }
 }

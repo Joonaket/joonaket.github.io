@@ -1,38 +1,377 @@
-.App {
-  text-align: center;
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #1e1e2e 0%, #252538 25%, #2a2a3a 50%, #2f2f42 75%, #34344c 100%);
+        color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+    }
+
+
+    .home-page {
+        text-align: center;
+        width: 100%;
+    }
+
+
+
+    .main-content {
+        padding-top: 60px;
+        max-width: 1200px; /* Set a maximum width */
+        margin: 0 auto; /* Center the content */
+        padding-left: 20px; /* Add some padding for better appearance */
+        padding-right: 20px; /* Add some padding for better appearance */
+    }
+
+    .racing-banner-container {
+        position: relative;
+        max-width: 90%;
+        margin: auto;
+        margin-top: 50px;
+        padding-bottom: 46%;
+
+        overflow: hidden;
+        border-radius: 20px; /* Rounded edges */
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+
+    .racing-banner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+        z-index: 10;
+    }
+
+
+    .clickable-area {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border-radius: 15px;
+    }
+
+
+    .racing-banner-container:hover .clickable-area:not(:hover) {
+        background-color: rgba(0,0,0, 0.77);
+    }
+
+    .clickable-area:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Clip Paths for Section Areas */
+    .circuit-area {
+        clip-path: polygon(0 0, 38% 0, 23.4% 100%, 0 100%);
+    }
+
+    .drift-area {
+        clip-path: polygon(38.1% 0, 73.3% 0, 59% 100%, 23.5% 100%);
+    }
+
+    .drag-area {
+        clip-path: polygon(73.4% 0, 100% 0, 100% 100%, 59.1% 100%);
+    }
+
+    .area-title {
+        position: relative;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        color: white;
+        text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.6);
+        font-size: 1.5rem;
+    }
+
+.vertical-menu {
+    display: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+.now-section {
+    display: flex;
+    align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+
+
+
+
+@media (max-width: 768px) {
+    .horizontal-menu {
+        display: none;
+    }
+
+    .vertical-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .vertical-menu .menu-item {
+        width: 80%;
+        height: 150px;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .vertical-menu .menu-item:hover {
+        transform: scale(1.05);
+    }
+
+    .vertical-menu .menu-title {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        color: white;
+        text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.6);
+        font-size: 1.5rem;
+    }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    .navigation-buttons {
+        display: flex;
+        gap: 15px;
+    }
+
+
+
+
+
+    .clickable-areas-layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 15;
+    }
+
+    .clickable-areas-layer .clickable-area {
+        background: transparent;
+    }
+
+    /* Titles Layer */
+    .titles-layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 20;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        pointer-events: none;
+    }
+
+    .circuit-title {
+        transform: translate(-20%, -150%);
+    }
+
+    .drift-title {
+        transform: translate(-30%, -150%);
+    }
+
+    .drag-title {
+        transform: translate(0%, -150%);
+    }
+
+
+
+
+
+.section-content > div {
+    min-height: 100vh; /* Ensure each section takes up the full viewport height */
+    padding: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.drag-racing-page {
+    scroll-behavior: smooth;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.racing-links {
+    margin-bottom: 20px;
+}
+
+.time-sections {
+
+    position: fixed;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+    .time-sections::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 5px;
+        background-color: #8f000a;
+        z-index: -1;
+    }
+
+.time-button {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 1.1rem;
+    border-bottom: 2px solid #666;
+    position: relative;
+}
+
+.time-button.active {
+    background-color: #888;
+}
+
+.time-button:hover {
+    background-color: #666;
+}
+
+.section-content {
+    margin-left: 5px; /* Adjust this value to provide space for the vertical menu */
+    width: calc(100% - 100px);
+    padding: 20px;
+    background-color: #2a2a3a; /* Match the background gradient theme */
+    border-radius: 5px;
+    color: #f5f5f5; /* Ensure text color is readable */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Add a subtle shadow for better visibility */
+    font-size: 1.1rem; /* Increase font size */
+    line-height: 1.6; /* Increase line height */
+}
+    .section-content h2 {
+        margin-top: 0;
+        color: #ffffff; /* Ensure header color is readable */
+        font-size: 1.5rem; /* Increase header font size */
+    }
+
+    .section-content ol {
+        padding-left: 20px;
+    }
+
+    .section-content a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .section-content a:hover {
+        text-decoration: underline;
+    }
+
+.section-content > div {
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.instruction-header{
+
+    margin-top: 50px ;
+}
+
+.getting-started-content {
+    padding: 20px;
+    background-color: #2a2a3a; /* Match the background gradient theme */
+    border-radius: 5px;
+    color: #f5f5f5; /* Ensure text color is readable */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Add a subtle shadow for better visibility */
+}
+
+.getting-started-content h2 {
+    margin-top: 0;
+    color: #ffffff; /* Ensure header color is readable */
+}
+
+.getting-started-content ol {
+    padding-left: 20px;
+}
+
+.getting-started-content a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.getting-started-content a:hover {
+    text-decoration: underline;
+}
+
+.examples-content {
+    padding: 20px;
+    background-color: #2a2a3a; /* Match the background gradient theme */
+    border-radius: 5px;
+    color: #f5f5f5; /* Ensure text color is readable */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Add a subtle shadow for better visibility */
+    font-size: 1.1rem; /* Increase font size */
+    line-height: 1.6; /* Increase line height */
+}
+
+.examples-content h2 {
+    margin-top: 0;
+    color: #ffffff; /* Ensure header color is readable */
+    font-size: 1.5rem; /* Increase header font size */
+}
+
+.video-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.video-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.video-item p {
+    flex: 1;
+    color: #f5f5f5;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .time-sections {
+        display: none;
+    }
+
+    .time-sections.open {
+        display: flex;
+        flex-direction: column;
+    }
 }
