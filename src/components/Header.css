@@ -1,0 +1,36 @@
+/* src/Header.css */
+.header {
+    display: flex;
+    justify-content: flex-start; /* Align items to the start (left) */
+    align-items: center;
+    width: 100%;
+    padding: 15px 0;
+    background: rgba(30, 30, 30, 0.9);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.nav-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    border: none;
+    border-radius: 50px; /* Rounded shape */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+}
+
+.home-button {
+    margin-left: 15px; /* Add some margin to the left */
+}
