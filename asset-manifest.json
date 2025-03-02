@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/motorsportsite/static/css/main.be7b6859.css",
+    "main.js": "/motorsportsite/static/js/main.832064ff.js",
+    "static/media/banner.png": "/motorsportsite/static/media/banner.8042a1b0e449949bba98.png",
+    "static/media/mobiledrift.jpg": "/motorsportsite/static/media/mobiledrift.cac409920c1ed6051600.jpg",
+    "static/media/mobilecircuit.jpg": "/motorsportsite/static/media/mobilecircuit.e5b4e496d4f67f77a22b.jpg",
+    "static/media/mobiledrag.jpg": "/motorsportsite/static/media/mobiledrag.540cf5ab78c7f3ab493a.jpg",
+    "index.html": "/motorsportsite/index.html",
+    "main.be7b6859.css.map": "/motorsportsite/static/css/main.be7b6859.css.map",
+    "main.832064ff.js.map": "/motorsportsite/static/js/main.832064ff.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.be7b6859.css",
+    "static/js/main.832064ff.js"
+  ]
+}
